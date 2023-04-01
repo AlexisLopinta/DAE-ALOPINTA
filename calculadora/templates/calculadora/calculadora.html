@@ -1,0 +1,15 @@
+<h2>Calculadora</h2>
+<form action="{% url 'calculadora:calcular' %}" method="post">
+    {% csrf_token %}
+    Numero 1:
+    <input type="number" name="num1"><br>
+    Numero 2:
+    <input type="number" name="num2"><br>
+    Operación:
+    <select name="operacion">
+        <option value="suma">Suma</option>
+        <option value="resta">Resta</option>
+        <option value="multiplicacion">Multiplicacion</option>
+    </select><br>
+    <input type="submit" name="submit" value="Calcular">
+</form>

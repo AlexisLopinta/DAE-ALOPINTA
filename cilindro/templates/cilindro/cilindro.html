@@ -1,0 +1,14 @@
+<h2>Calculadora de Volumen de un Cilindro</h2>
+<form action="{% url 'cilindro:respuesta' %}" method="post">
+    {% csrf_token %}
+    Introduzca el diametro en metros:
+    <input type="number" name="diametro" step="0.01"><br>
+    <br>
+    Introduzca la altura en metros:
+    <input type="number" name="altura" step="0.01"><br>
+    <br>
+    <input type="submit" name="submit" value="calcular">
+</form>
+{% if volumen %}
+<p>El volumen del cilindro es de {{ volumen }} metros cubicos.</p>
+{% endif %}
